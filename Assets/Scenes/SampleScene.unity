@@ -184,7 +184,7 @@ MonoBehaviour:
   m_text: Pavko
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 29ab0914665412c4e84a96d37da99122, type: 2}
-  m_sharedMaterial: {fileID: 1934018693350004456, guid: 29ab0914665412c4e84a96d37da99122, type: 2}
+  m_sharedMaterial: {fileID: 2489557574591111863, guid: 29ab0914665412c4e84a96d37da99122, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -541,7 +541,7 @@ MonoBehaviour:
   m_text: Roulette
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 70272e2732328e54c8ed5a487fc360c5, type: 2}
-  m_sharedMaterial: {fileID: 3125526137926806892, guid: 70272e2732328e54c8ed5a487fc360c5, type: 2}
+  m_sharedMaterial: {fileID: 320820647460600874, guid: 70272e2732328e54c8ed5a487fc360c5, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -891,7 +891,7 @@ MonoBehaviour:
   m_text: Blackjack
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 70272e2732328e54c8ed5a487fc360c5, type: 2}
-  m_sharedMaterial: {fileID: 3125526137926806892, guid: 70272e2732328e54c8ed5a487fc360c5, type: 2}
+  m_sharedMaterial: {fileID: 320820647460600874, guid: 70272e2732328e54c8ed5a487fc360c5, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -1102,7 +1102,7 @@ MonoBehaviour:
   m_text: Account
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 70272e2732328e54c8ed5a487fc360c5, type: 2}
-  m_sharedMaterial: {fileID: 3125526137926806892, guid: 70272e2732328e54c8ed5a487fc360c5, type: 2}
+  m_sharedMaterial: {fileID: 320820647460600874, guid: 70272e2732328e54c8ed5a487fc360c5, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -1681,7 +1681,7 @@ MonoBehaviour:
   m_text: 200$
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 70272e2732328e54c8ed5a487fc360c5, type: 2}
-  m_sharedMaterial: {fileID: 3125526137926806892, guid: 70272e2732328e54c8ed5a487fc360c5, type: 2}
+  m_sharedMaterial: {fileID: 320820647460600874, guid: 70272e2732328e54c8ed5a487fc360c5, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -2620,7 +2620,7 @@ MonoBehaviour:
   m_text: Lucky Six
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 70272e2732328e54c8ed5a487fc360c5, type: 2}
-  m_sharedMaterial: {fileID: 3125526137926806892, guid: 70272e2732328e54c8ed5a487fc360c5, type: 2}
+  m_sharedMaterial: {fileID: 320820647460600874, guid: 70272e2732328e54c8ed5a487fc360c5, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -3050,7 +3050,7 @@ MonoBehaviour:
   m_text: High-Low
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 70272e2732328e54c8ed5a487fc360c5, type: 2}
-  m_sharedMaterial: {fileID: 3125526137926806892, guid: 70272e2732328e54c8ed5a487fc360c5, type: 2}
+  m_sharedMaterial: {fileID: 320820647460600874, guid: 70272e2732328e54c8ed5a487fc360c5, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -3673,7 +3673,7 @@ MonoBehaviour:
   m_text: Home
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 70272e2732328e54c8ed5a487fc360c5, type: 2}
-  m_sharedMaterial: {fileID: 3125526137926806892, guid: 70272e2732328e54c8ed5a487fc360c5, type: 2}
+  m_sharedMaterial: {fileID: 320820647460600874, guid: 70272e2732328e54c8ed5a487fc360c5, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
