@@ -12,6 +12,7 @@ public class Account : MonoBehaviour
     public TextMeshProUGUI BalanceText;
 
     public GameObject accountHolder;
+    public GameObject menuMask;
 
     // Start is called before the first frame update
     void Start()
@@ -40,6 +41,7 @@ public class Account : MonoBehaviour
         accountName = username;
         accountNameText.text = accountName;
         accountHolder.SetActive(true);
+		menuMask.SetActive(false);
 		GetComponent<Login>().HidePannels();
 
 	}
@@ -52,7 +54,9 @@ public class Account : MonoBehaviour
     public void LogOut()
     {
         SaveData(accountName);
-		accountHolder.SetActive(true);
+		accountHolder.SetActive(false);
+        menuMask.SetActive(true);
 		GetComponent<Login>().ShowPannels();
+
     }
 }

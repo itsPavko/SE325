@@ -17,8 +17,8 @@ public class Login : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-
-    }
+		GetComponent<Account>().LoadData("Pavko01");
+	}
 
     // Update is called once per frame
     void Update()
@@ -49,7 +49,7 @@ public class Login : MonoBehaviour
             else
             {
                 PlayerPrefs.SetString(usernameSignUp.text, passwordSignUp.text);
-                PlayerPrefs.SetFloat((usernameSignUp + "Balance"), 100.0f);
+                PlayerPrefs.SetFloat((usernameSignUp.text + "Balance"), 100.0f);
                 GetComponent<Account>().LoadData(usernameSignUp.text);
                 error.text = "";
             }
