@@ -49,6 +49,7 @@ public class LogicHighLow : MonoBehaviour
 	// Start is called before the first frame update
 	void Start()
 	{
+		bet = 1;
 		curCard = GenerateNewCard();
 		newCard = curCard;
 		UpdateUI();

@@ -5,7 +5,6 @@ using Random = UnityEngine.Random;
 using UnityEngine.UI;
 using TMPro;
 using System;
-using Unity.VisualScripting;
 
 public class LogicBlackjack : MonoBehaviour
 {
@@ -24,6 +23,8 @@ public class LogicBlackjack : MonoBehaviour
 	private Card curCard;
 	public List<Card> dealerCards = new List<Card>();
 	public List<Card> playerCards = new List<Card>();
+
+	public float bet;
 
 	public int dealerScore;
 	public int playerScore;
@@ -45,11 +46,23 @@ public class LogicBlackjack : MonoBehaviour
 	public TextMeshProUGUI dealerScoreText;
 	public TextMeshProUGUI playerScoreText;
 
+	public TMP_InputField betInput;
+	private bool canBet = true;
+	public GameObject warningText;
+	public GameObject warningImage;
+	public GameObject lockImage;
+	public Image betHolder;
+
+	public TextMeshProUGUI outcome;
+
+	public Account account;
 
 
 	void Start()
 	{
-
+		outcome.text = "";
+		bet = 1;
+		UpdateBetHolder();
 	}
 
 	// Update is called once per frame
@@ -86,14 +99,20 @@ public class LogicBlackjack : MonoBehaviour
 
 	public void StartRound()
 	{
-
-		startButton.SetActive(false);
-
-		StartCoroutine(FirstDraw());
+		if (canBet)
+		{
+			outcome.text = "";
+			account.UpdateBalance(-bet);
+			startButton.SetActive(false);
+			lockImage.SetActive(true);
+			StartCoroutine(FirstDraw());
+		}
 	}
 
 	public IEnumerator FirstDraw()
 	{
+
+
 		bool h = true;
 		curCard = GenerateNewCard(h);
 		dealerCards.Add(curCard);
@@ -265,18 +284,25 @@ public class LogicBlackjack : MonoBehaviour
 	{
 		twoButtonHolder.SetActive(false);
 		startButton.SetActive(true);
+		account.UpdateBalance(bet);
+		outcome.text = "Draw";
 	}
 
 	public void Lose()
 	{
 		twoButtonHolder.SetActive(false);
 		startButton.SetActive(true);
+		lockImage.SetActive(false);
+		outcome.text = "You Lose";
 	}
 
 	public void Win()
 	{
 		twoButtonHolder.SetActive(false);
 		startButton.SetActive(true);
+		lockImage.SetActive(false);
+		account.UpdateBalance(bet * 2f);
+		outcome.text = "You Win";
 	}
 	public void DealCard(bool hidden, int p, Card card) // p - 0=dealer 1=player
 	{
@@ -402,5 +428,68 @@ public class LogicBlackjack : MonoBehaviour
 		
 		Debug.Log("Drew card: " + card.value + card.suit);
 		return card;
+	}
+
+	public void UpdateBet()
+	{
+
+		if (float.TryParse(betInput.text, out float newBet))
+		{
+			bet = newBet;
+		}
+		else
+		{
+			bet = 0;
+			betInput.text = bet.ToString("0.00");
+			betInput.ReleaseSelection();
+		}
+
+		UpdateBetHolder();
+	}
+
+	public void EndEditBet()
+	{
+		//string formated = String.Format("{0:F2}", betInput.text);
+		if (float.TryParse(betInput.text, out float newBet))
+		{
+			bet = newBet;
+			betInput.text = bet.ToString("0.00");
+		}
+		else
+		{
+			betInput.ReleaseSelection();
+			bet = 0;
+			betInput.text = bet.ToString("0.00");
+			//betInput.ReleaseSelection();
+		}
+
+		UpdateBetHolder();
+	}
+
+	public void UpdateBetHolder()
+	{
+		if (bet > account.balance)
+		{
+			canBet = false;
+			warningImage.SetActive(true);
+			warningText.SetActive(true);
+			betHolder.color = colors[2];
+			warningText.GetComponent<TextMeshProUGUI>().text = "Insufficient balance!";
+		}
+		else if (bet <= 0)
+		{
+			canBet = false;
+			warningImage.SetActive(true);
+			warningText.SetActive(true);
+			betHolder.color = colors[2];
+			warningText.GetComponent<TextMeshProUGUI>().text = "Bet cannot be less than zero!";
+		}
+		else
+		{
+			canBet = true;
+			warningImage.SetActive(false);
+			warningText.SetActive(false);
+			betHolder.color = colors[1];
+		}
 	}
 }
